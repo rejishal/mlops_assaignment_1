@@ -7,3 +7,7 @@ services:
       - "5000:5000"
     container_name: flask-app
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 5g
