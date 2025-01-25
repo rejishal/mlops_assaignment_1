@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 #from Model.DataPreprocessing import load_and_preprocess_data
 #from Model.Model_new import train_model, evaluate_model
 import mlflow
+import pickle
 
 # Load and preprocess data
 #X_train, X_test, y_train, y_test = load_and_preprocess_data()
@@ -15,8 +16,11 @@ import mlflow
 #accuracy = evaluate_model(best_model, X_test, y_test)
 #print(f"Model Accuracy: {accuracy:.2f}")
 
-model_uri = "runs:/70bea5b86bae4029b1df311ba12ef83f/random_forest_model"
-best_model = mlflow.pyfunc.load_model(model_uri)
+#model_uri = "runs:/70bea5b86bae4029b1df311ba12ef83f/random_forest_model"
+#best_model = mlflow.pyfunc.load_model(model_uri)
+
+with open('App/PickleFile/model.pkl', 'rb') as f:
+    best_model = pickle.load(f)
 
 # Flask application
 app = Flask(__name__)
@@ -37,4 +41,4 @@ def predict():
         return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=5000)
