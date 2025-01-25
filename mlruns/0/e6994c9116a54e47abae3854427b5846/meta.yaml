@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rejis/OneDrive%20-%20wilp.bits-pilani.ac.in/bits/mlops/ass1/mlops_assaignment_1/mlruns/0/e6994c9116a54e47abae3854427b5846/artifacts
+end_time: 1737829125578
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e6994c9116a54e47abae3854427b5846
+run_name: abundant-cub-87
+run_uuid: e6994c9116a54e47abae3854427b5846
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737829105156
+status: 3
+tags: []
+user_id: rejis

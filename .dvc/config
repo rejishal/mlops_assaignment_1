@@ -1,4 +1,0 @@
-[core]
-    remote = localhost
-['remote "localhost"']
-    url = C:\Users\rejis\OneDrive - wilp.bits-pilani.ac.in\bits\mlops\ass1\DVC
