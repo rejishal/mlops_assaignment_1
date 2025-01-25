@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rejis/OneDrive%20-%20wilp.bits-pilani.ac.in/bits/mlops/ass1/mlops_assaignment_1/Model/mlruns/0/57e40e4fc0e94dcd8fe8142a9be49dc5/artifacts
+end_time: 1737797549383
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 57e40e4fc0e94dcd8fe8142a9be49dc5
+run_name: traveling-quail-826
+run_uuid: 57e40e4fc0e94dcd8fe8142a9be49dc5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737797545024
+status: 3
+tags: []
+user_id: rejis

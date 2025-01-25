@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rejis/OneDrive%20-%20wilp.bits-pilani.ac.in/bits/mlops/ass1/mlops_assaignment_1/mlruns/0/7ec63eda6f514c31b1b9b1c5af0c363b/artifacts
+end_time: 1737799712387
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7ec63eda6f514c31b1b9b1c5af0c363b
+run_name: bemused-ant-947
+run_uuid: 7ec63eda6f514c31b1b9b1c5af0c363b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737799707681
+status: 3
+tags: []
+user_id: rejis
