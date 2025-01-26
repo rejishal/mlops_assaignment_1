@@ -1,0 +1,4 @@
+[core]
+    remote = local_remote
+['remote "local_remote"']
+    url = C:\Users\rejis\OneDrive - wilp.bits-pilani.ac.in\bits\mlops\ass1\dvc_mlops
