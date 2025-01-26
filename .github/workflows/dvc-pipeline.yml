@@ -1,0 +1,66 @@
+name: DVC Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Run the workflow on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Run the workflow on pull requests to the main branch
+
+jobs:
+  dvc-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      # Step 3: Install Dependencies
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install dvc
+
+      # Step 4: Setup DVC Remote (Optional if using secure access tokens)
+      #- name: Configure DVC Remote
+      #  env:
+      #    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #  run: |
+      #    dvc remote modify myremote access_key_id $AWS_ACCESS_KEY_ID
+      #    dvc remote modify myremote secret_access_key $AWS_SECRET_ACCESS_KEY
+
+      # Step 5: Pull Data from DVC Remote
+      #- name: Pull DVC Data
+      #  run: |
+      #    dvc pull
+
+      # Step 6: Reproduce the Pipeline
+      - name: Run DVC Pipeline
+        run: |
+          dvc repro
+
+      # Step 7: Push Updated Data and Model
+      #- name: Push Data and Models to Remote
+      #  run: |
+      #    dvc push
+
+      # Step 8: Push Changes to Git
+      #- name: Commit and Push Changes
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  run: |
+      #    git config --global user.name "Rejishal"
+      #    git config --global user.email "rejishal@gmail.com"
+      #    git add .dvc/ dvc.yaml dvc.lock
+      #    git commit -m "Update DVC pipeline results" || echo "No changes to commit"
+      #    git push
