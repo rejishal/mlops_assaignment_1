@@ -1,0 +1,7 @@
+stages:
+  preprocess:
+    cmd: python Model/DataPreprocessing.py data/preprocessed_data/processed_data.csv
+    deps:
+    - data/raw_data/raw_data.csv
+    outs:
+    - data/preprocessed_data/processed_data.csv
