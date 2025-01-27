@@ -16,6 +16,14 @@ def train_model(X_train, y_train):
         'min_samples_leaf': [1, 2, 4]
     }
 
+    param_grid = {
+    'n_estimators': [10, 50, 150, 300],  # Includes a smaller value and a higher one
+    'max_depth': [5, 15, 25, None],     # Added a smaller depth for comparison
+    'min_samples_split': [3, 6, 12],    # Modified split values
+    'min_samples_leaf': [1, 3, 5]       # Slightly larger range for leaf size
+    }
+
+
     rf = RandomForestClassifier(random_state=42)
     grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=3, scoring='accuracy', n_jobs=-1)
     grid_search.fit(X_train, y_train)
